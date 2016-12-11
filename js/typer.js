@@ -8,7 +8,7 @@ $(function(){
     });
     $(".skills").typed({
         strings: ["Software Engineer. Hacker. Learner."],
-        startDelay: 2800,
+        startDelay: 2000,
         showCursor: true,
         typeSpeed: 100,
         onStringTyped: function() {document.getElementsByClassName("typed-cursor")[0].className="empty";}
