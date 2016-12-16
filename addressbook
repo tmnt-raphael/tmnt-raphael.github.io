@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Redirecting...</title>
+</head>
+<body>
+	<script type="text/javascript">
+		window.location.replace("http://tmnt-raphael.github.io/AddressBook/")
+	</script>
+</body>
+</html>
