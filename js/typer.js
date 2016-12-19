@@ -7,7 +7,7 @@ $(function(){
         onStringTyped: function() {document.getElementsByClassName("typed-cursor")[0].className="empty";}
     });
     $(".skills").typed({
-        strings: ["Software Engineer. Hacker. Learner."],
+        strings: ["Software Engineer. Programmer. Learner."],
         startDelay: 2000,
         showCursor: true,
         typeSpeed: 100,
