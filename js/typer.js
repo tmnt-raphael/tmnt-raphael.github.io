@@ -2,7 +2,7 @@ $(function(){
     $(".name").typed({
         strings: ["Ken Luy"],
         startDelay: 0,
-        showCursor: true,
+        showCursor: false,
         typeSpeed: 100,
         onStringTyped: function() {document.getElementsByClassName("typed-cursor")[0].className="empty";}
     });
