@@ -1,0 +1,54 @@
+body{
+  background: #f9f9f9;
+}
+
+#volume-slider{
+  align-items: center;
+  display    : flex;
+  margin     : 0px auto;
+  padding    : 0px 0;
+  width      : 265px;
+}
+
+.volume-icon{
+  cursor          : pointer;
+  height          : 60px;
+  transform       : rotate(-0deg);
+  transform-origin: center left;
+  width           : 60px;
+
+  .volume-icon-bg{
+    fill      : #100100;
+    transition: fill 300ms;
+  }
+
+  &:hover .volume-icon-bg{
+    fill: #b6aebf;
+  }
+}
+
+#circle-mask-shape{
+  transform       : scale(0);
+  transform-origin: center center;
+}
+
+.volume-track{
+  background-color: #e1dee5;
+  border-radius   : 3px;
+  flex            : 1;
+  height          : 4px;
+  margin-left     : 5px;
+  position        : relative;
+}
+
+.volume-indicator{
+  background-color: #18BC9C;
+  border-radius   : 50%;
+  height          : 12px;
+  left            : 0;
+  position        : absolute;
+  top             : -4px;
+  transition      : visibility 100ms, opacity 100ms;
+  width           : 12px;
+  transform       : translateX(200px);
+}
