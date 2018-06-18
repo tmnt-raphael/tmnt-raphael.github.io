@@ -52,3 +52,7 @@ body{
   width           : 12px;
   transform       : translateX(200px);
 }
+
+#music-player{
+  padding: 10px;
+}
