@@ -6,7 +6,7 @@ body{
   align-items: center;
   display    : flex;
   margin     : 0px auto;
-  padding    : 50px 0 0;
+  padding    : 0px 0;
   width      : 265px;
 }
 
@@ -51,4 +51,8 @@ body{
   transition      : visibility 100ms, opacity 100ms;
   width           : 12px;
   transform       : translateX(200px);
+}
+
+#music-player-container{
+  padding-top     : 30px;
 }
