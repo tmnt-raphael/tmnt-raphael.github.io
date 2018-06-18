@@ -53,6 +53,6 @@ body{
   transform       : translateX(200px);
 }
 
-#music-player{
+#music-player-container{
   padding: 10px;
 }
