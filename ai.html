@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Setups</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header>AI Setups Calculations</header>
+  <main>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="entry_price" type="text" class="validate">
+            <label for="entry_price">Entry Price</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="exit_price" type="text" class="validate">
+            <label for="exit_price">Exit Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="e.g. 0.025" id="tick_size" type="text" class="validate">
+            <label for="tick_size">Tick Size</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="e.g. 12.50" id="price_per_tick" type="text" class="validate">
+            <label for="price_per_tick">Price Per Tick</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <a id="calculate_button" class="waves-effect waves-light btn">
+      <i class="material-icons right">local_atm</i>calculate
+    </a>
+    <div class="row">
+      <br>
+      <div>
+        <span class="bold">Midpoint price:&nbsp</span>
+        <span id="midpoint_price"></span>
+      </div>
+      <div>
+        <span class="bold">50% profit:&nbsp</span>
+        <span id="50%_profit"></span>
+      </div>
+      <div>
+        <span class="bold">100% profit:&nbsp</span>
+        <span id="100%_profit"></span>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  <script type="text/javascript" src="js/ai.js"></script>
+  <style type="text/css">
+    body {
+      margin: 0;
+      background: url("patagonia.jpg");
+      background-size: cover;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(25, 0.5fr);
+    }
+
+    body > * {
+      opacity: 0.9;
+      padding: 1em;
+    }
+
+    header {
+      background: #69bf64;/*pink;*/
+      grid-row: 2/4;
+      grid-column: 3/11;
+      font-weight: bold;
+      text-align: center
+    }
+
+    main {
+      background: white;/*#69bf64;*/
+      grid-row: 4/20;
+      grid-column: 3/11;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+  </style>
+</body>
+</html>
