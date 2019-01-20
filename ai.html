@@ -31,24 +31,24 @@
 <body>
   <header>AI Setups Calculations</header>
   <main>
-    <div class="row">
-      <form class="col s12">
+    <div>
+      <form>
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6">
             <input id="entry_price" type="text" class="validate">
             <label for="entry_price">Entry Price *</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6">
             <input id="exit_price" type="text" class="validate">
             <label for="exit_price">Exit Price *</label>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6">
             <input placeholder="e.g. 0.025" id="tick_size" type="text" class="validate">
             <label for="tick_size">Tick Size</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6">
             <input placeholder="e.g. 12.50" id="price_per_tick" type="text" class="validate">
             <label for="price_per_tick">Price Per Tick</label>
           </div>
@@ -80,10 +80,11 @@
     body {
       margin: 0;
       background: url("img/patagonia.jpg");
-      background-size: auto;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(25, 0.5fr);
     }
 
     body > * {
@@ -91,19 +92,23 @@
     }
 
     header {
+      margin-top: 12vh;
+      margin-left: auto;
+      margin-right: auto;
       padding: 1em;
       background: #69bf64;
-      grid-row: 4/6;
-      grid-column: 3/11;
       font-weight: bold;
-      text-align: center
+      text-align: center;
+      max-width: 60rem;
+      width: 100%;
     }
 
     main {
+      margin: 0 auto;
       padding: 2em;
       background: white;
-      grid-row: 6/22;
-      grid-column: 3/11;
+      max-width: 60rem;
+      width: 100%;
     }
 
     .bold {
