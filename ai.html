@@ -29,52 +29,53 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-  <header>AI Setups Calculations</header>
-  <main>
-    <div>
-      <form>
-        <div class="row">
-          <div class="input-field col s12 m12 l6">
-            <input id="entry_price" type="text" class="validate">
-            <label for="entry_price">Entry Price *</label>
+  <div class="box">
+    <header>AI Setups Calculations</header>
+    <main>
+      <div>
+        <form>
+          <div class="row">
+            <div class="input-field col s12 m12 l6">
+              <input id="entry_price" type="text" class="validate">
+              <label for="entry_price">Entry Price *</label>
+            </div>
+            <div class="input-field col s12 m12 l6">
+              <input id="exit_price" type="text" class="validate">
+              <label for="exit_price">Exit Price *</label>
+            </div>
           </div>
-          <div class="input-field col s12 m12 l6">
-            <input id="exit_price" type="text" class="validate">
-            <label for="exit_price">Exit Price *</label>
+          <div class="row">
+            <div class="input-field col s12 m12 l6">
+              <input placeholder="e.g. 0.025" id="tick_size" type="text" class="validate">
+              <label for="tick_size">Tick Size</label>
+            </div>
+            <div class="input-field col s12 m12 l6">
+              <input placeholder="e.g. 12.50" id="price_per_tick" type="text" class="validate">
+              <label for="price_per_tick">Price Per Tick</label>
+            </div>
           </div>
+        </form>
+      </div>
+      <a id="calculate_button" class="waves-effect waves-light btn">
+        <i class="material-icons right">local_atm</i>calculate
+      </a>
+      <div class="row">
+        <br>
+        <div>
+          <span class="bold">Midpoint price:&nbsp</span>
+          <span id="midpoint_price"></span>
         </div>
-        <div class="row">
-          <div class="input-field col s12 m12 l6">
-            <input placeholder="e.g. 0.025" id="tick_size" type="text" class="validate">
-            <label for="tick_size">Tick Size</label>
-          </div>
-          <div class="input-field col s12 m12 l6">
-            <input placeholder="e.g. 12.50" id="price_per_tick" type="text" class="validate">
-            <label for="price_per_tick">Price Per Tick</label>
-          </div>
+        <div>
+          <span class="bold">50% profit:&nbsp</span>
+          <span id="50%_profit"></span>
         </div>
-      </form>
-    </div>
-    <a id="calculate_button" class="waves-effect waves-light btn">
-      <i class="material-icons right">local_atm</i>calculate
-    </a>
-    <div class="row">
-      <br>
-      <div>
-        <span class="bold">Midpoint price:&nbsp</span>
-        <span id="midpoint_price"></span>
+        <div>
+          <span class="bold">100% profit:&nbsp</span>
+          <span id="100%_profit"></span>
+        </div>
       </div>
-      <div>
-        <span class="bold">50% profit:&nbsp</span>
-        <span id="50%_profit"></span>
-      </div>
-      <div>
-        <span class="bold">100% profit:&nbsp</span>
-        <span id="100%_profit"></span>
-      </div>
-    </div>
-  </main>
-  <footer></footer>
+    </main>
+  </div>
   <script type="text/javascript" src="js/ai.js"></script>
   <style type="text/css">
     body {
@@ -91,24 +92,27 @@
       opacity: 0.9;
     }
 
-    header {
+    .box {
       margin-top: 12vh;
       margin-left: auto;
       margin-right: auto;
-      padding: 1em;
-      background: #69bf64;
-      font-weight: bold;
-      text-align: center;
       max-width: 60rem;
       width: 70%;
+      -webkit-box-shadow: 0px 0px 15px 0px rgba(82,82,82,1);
+      -moz-box-shadow: 0px 0px 15px 0px rgba(82,82,82,1);
+      box-shadow: 0px 0px 15px 0px rgba(82,82,82,1);
+    }
+
+    header {
+      padding: 1rem;
+      background: #69bf64;
+      font-size: 1.15rem;
+      text-align: center;
     }
 
     main {
-      margin: 0 auto;
-      padding: 2em;
+      padding: 2rem;
       background: white;
-      max-width: 60rem;
-      width: 70%;
     }
 
     .bold {
