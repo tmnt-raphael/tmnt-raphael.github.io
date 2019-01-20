@@ -1,8 +1,8 @@
 document.getElementById("calculate_button").addEventListener("click", doCalculations);
 
 function doCalculations() {
-  var a = document.getElementById('entry_price').value;
-  var b = document.getElementById('exit_price').value;
+  var a = sanitizeInput(document.getElementById('entry_price').value);
+  var b = sanitizeInput(document.getElementById('exit_price').value);
   var decimalLength = getDecimalLength(a,b);
   a *= Math.pow(10,decimalLength);
   b *= Math.pow(10,decimalLength);
@@ -11,8 +11,8 @@ function doCalculations() {
   b /= Math.pow(10,decimalLength);
   c /= Math.pow(10,decimalLength);
 
-  var d = document.getElementById('tick_size').value;
-  var e = document.getElementById('price_per_tick').value;
+  var d = sanitizeInput(document.getElementById('tick_size').value);
+  var e = sanitizeInput(document.getElementById('price_per_tick').value);
 
   document.getElementById("midpoint_price").innerHTML = c;
 
@@ -27,7 +27,7 @@ function doCalculations() {
   }
 }
 
-function getDecimalLength(a,b){
+function getDecimalLength(a,b) {
   var a = a.toString(10);
   var b = b.toString(10);
   var decimalLength = 0;
@@ -38,4 +38,33 @@ function getDecimalLength(a,b){
     decimalLength = Math.max(decimalLength,b.split('.')[1].length);
   }
   return decimalLength+1;
+}
+
+function sanitizeInput(input) {
+  if(input=== null || input === '') {return input;}
+  input = input.trim();
+  if(input[0] === '$') {
+    input = input.substr(1);
+  }
+  console.log(input);
+  return input;
+}
+
+var input1 = document.getElementById("entry_price");
+input1.addEventListener("keyup", runCalculateButton);
+
+var input2 = document.getElementById("exit_price");
+input2.addEventListener("keyup", runCalculateButton);
+
+var input3 = document.getElementById("tick_size");
+input3.addEventListener("keyup", runCalculateButton);
+
+var input4 = document.getElementById("price_per_tick");
+input4.addEventListener("keyup", runCalculateButton);
+
+function runCalculateButton(event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    document.getElementById("calculate_button").click();
+  }
 }
