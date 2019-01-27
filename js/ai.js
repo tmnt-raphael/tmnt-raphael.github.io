@@ -24,6 +24,9 @@ function doCalculations() {
     document.getElementById("50%_profit").innerHTML = "$" + profit50.toFixed(2);
     var profit100 = Math.abs((a-b)/d*e);
     document.getElementById("100%_profit").innerHTML = "$" + profit100.toFixed(2);
+  } else {
+    document.getElementById("50%_profit").innerHTML = '';
+    document.getElementById("100%_profit").innerHTML = '';
   }
 }
 
