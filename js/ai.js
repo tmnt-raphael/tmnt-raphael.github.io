@@ -6,15 +6,18 @@ function doCalculations() {
   var decimalLength = getDecimalLength(a,b);
   a *= Math.pow(10,decimalLength);
   b *= Math.pow(10,decimalLength);
-  var c = (Math.max(a,b)-Math.min(a,b))/2+Math.min(a,b);
+  var c = (a+b)/2;
+  var f = b+0.5*(b-a);
   a /= Math.pow(10,decimalLength);
   b /= Math.pow(10,decimalLength);
   c /= Math.pow(10,decimalLength);
+  f /= Math.pow(10,decimalLength);
 
   var d = sanitizeInput(document.getElementById('tick_size').value);
   var e = sanitizeInput(document.getElementById('price_per_tick').value);
 
   document.getElementById("midpoint_price").innerHTML = c;
+  document.getElementById("150%_profit_price").innerHTML = f;
 
   if (document.getElementById('tick_size').value != null &&
     document.getElementById('tick_size').value != "" &&
@@ -24,9 +27,12 @@ function doCalculations() {
     document.getElementById("50%_profit").innerHTML = "$" + profit50.toFixed(2);
     var profit100 = Math.abs((a-b)/d*e);
     document.getElementById("100%_profit").innerHTML = "$" + profit100.toFixed(2);
+    var profit150 = Math.abs((a-f)/d*e);
+    document.getElementById("150%_profit").innerHTML = "$" + profit150.toFixed(2);
   } else {
     document.getElementById("50%_profit").innerHTML = '';
     document.getElementById("100%_profit").innerHTML = '';
+    document.getElementById("150%_profit").innerHTML = '';
   }
 }
 
