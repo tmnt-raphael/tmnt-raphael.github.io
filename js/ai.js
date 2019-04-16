@@ -6,6 +6,8 @@ function doCalculations() {
   var decimalLength = getDecimalLength(a,b);
   a *= Math.pow(10,decimalLength);
   b *= Math.pow(10,decimalLength);
+  a = parseInt(a, 10);
+  b = parseInt(b, 10);
   var c = (a+b)/2;
   var f = b+0.5*(b-a);
   a /= Math.pow(10,decimalLength);
