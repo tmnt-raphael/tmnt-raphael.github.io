@@ -5,9 +5,7 @@ function doCalculations() {
   var b = sanitizeInput(document.getElementById('exit_price').value);
   var decimalLength = getDecimalLength(a,b);
   a *= Math.pow(10,decimalLength);
-  b *= Math.pow(10,decimalLength);
-  a = parseInt(a, 10);
-  b = parseInt(b, 10);
+  b *= Math.pow(10,decimalLength)
   var c = (a+b)/2;
   var f = b+0.5*(b-a);
   a /= Math.pow(10,decimalLength);
@@ -48,7 +46,7 @@ function getDecimalLength(a,b) {
   if (b.split('.')[1]) {
     decimalLength = Math.max(decimalLength,b.split('.')[1].length);
   }
-  return decimalLength+1;
+  return decimalLength+2;
 }
 
 function sanitizeInput(input) {
