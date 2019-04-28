@@ -36,12 +36,7 @@ function doCalculations() {
     document.getElementById("150%_profit").innerHTML = "$" + profit150.toFixed(2);
     var profit200 = -1*Math.abs((a-g)*d/c);
     var profit200String = profit200.toFixed(2).toString();
-    console.log(profit200String);
-    if (isNaN(profit200String[0])) {
-      profit200String = profit200String.slice(1);
-      console.log(profit200String);
-    }
-    document.getElementById("-200%_profit").innerHTML ="-$" + profit200String;
+    document.getElementById("-200%_profit").innerHTML ="$" + profit200String;
   } else {
     document.getElementById("50%_profit").innerHTML = '';
     document.getElementById("100%_profit").innerHTML = '';
