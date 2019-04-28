@@ -62,28 +62,39 @@
           <i class="material-icons right">local_atm</i>calculate
         </a>
       </div>
-      <div>
-        <div>
-          <span class="bold">Midpoint price:&nbsp</span>
-          <span id="midpoint_price"></span>
-        </div>
-        <div>
-          <span class="bold">50% profit:&nbsp</span>
-          <span id="50%_profit"></span>
-        </div>
-        <div style="margin-bottom: 0.75rem">
-          <span class="bold">100% profit:&nbsp</span>
-          <span id="100%_profit"></span>
-        </div>
-        <div>
-          <span class="bold">150% profit price:&nbsp</span>
-          <span id="150%_profit_price"></span>
-        </div>
-        <div>
-          <span class="bold">150% profit:&nbsp</span>
-          <span id="150%_profit"></span>
-        </div>
-      </div>
+      <table class="centered">
+        <thead>
+          <tr>
+            <th>Entry</th>
+            <th>Exit</th>
+            <th>Profit Factor (%)</th>
+            <th>Profit ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4" id="0%_profit_price"></td>
+            <td id="midpoint_price"></td>
+            <td>50%</td>
+            <td id="50%_profit" style="color: green"></td>
+          </tr>
+          <tr>
+            <td id="100%_profit_price"></td>
+            <td>100%</td>
+            <td id="100%_profit" style="color: green"></td>
+          </tr>
+          <tr>
+            <td id="150%_profit_price"></td>
+            <td>150%</td>
+            <td id="150%_profit" style="color: green"></td>
+          </tr>
+          <tr>
+            <td id="-200%_profit_price"></td>
+            <td>-200%</td>
+            <td id="-200%_profit" style="color: red"></td>
+          </tr>
+        </tbody>
+      </table>
     </main>
   </div>
   <div></div>
@@ -106,6 +117,7 @@
 
     .box {
       margin-top: 10vh;
+      margin-bottom: 10vh;
       max-width: 50rem;
       border-radius: 2px;
     }
