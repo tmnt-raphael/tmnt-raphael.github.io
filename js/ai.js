@@ -5,8 +5,10 @@ function doCalculations() {
   var b = sanitizeInput(document.getElementById('exit_price').value);
   var decimalLength = getDecimalLength(a,b);
   a *= Math.pow(10,decimalLength);
-  b *= Math.pow(10,decimalLength)
-  var e = (a+b)/2;
+  a = Math.round(a)
+  b *= Math.pow(10,decimalLength);
+  b = Math.round(b)
+  var e = (a+b)/2;;
   var f = b+(b-a)/2;
   var g = a-2*(b-a);
   a /= Math.pow(10,decimalLength);
@@ -55,12 +57,12 @@ function getDecimalLength(a,b) {
   if (b.split('.')[1]) {
     decimalLength = Math.max(decimalLength,b.split('.')[1].length);
   }
-  var result = decimalLength+2;
+  var result = decimalLength + 1;
   return result;
 }
 
 function sanitizeInput(input) {
-  if(input=== null || input === '') {return input;}
+  if(input === null || input === '') {return input;}
   input = input.trim();
   if(input[0] === '$') {
     input = input.substr(1);
