@@ -18,7 +18,7 @@ function doCalculations() {
   g /= Math.pow(10,decimalLength);
 
   var c = sanitizeInput(document.getElementById('tick_size').value);
-  var d = sanitizeInput(document.getElementById('price_per_tick').value);
+  var d = sanitizeInput(document.getElementById('dollars_per_tick').value);
 
   document.getElementById("0%_profit_price").innerHTML = a;
   document.getElementById("midpoint_price").innerHTML = e;
@@ -28,8 +28,8 @@ function doCalculations() {
 
   if (document.getElementById('tick_size').value != null &&
     document.getElementById('tick_size').value != "" &&
-    document.getElementById('price_per_tick').value != null &&
-    document.getElementById('price_per_tick').value != "") {
+    document.getElementById('dollars_per_tick').value != null &&
+    document.getElementById('dollars_per_tick').value != "") {
     var profit50 = (e-Math.min(a,b))*d/c;
     document.getElementById("50%_profit").innerHTML = "$" + profit50.toFixed(2);
     var profit100 = Math.abs((a-b)*d/c);
@@ -79,7 +79,7 @@ input2.addEventListener("keyup", runCalculateButton);
 var input3 = document.getElementById("tick_size");
 input3.addEventListener("keyup", runCalculateButton);
 
-var input4 = document.getElementById("price_per_tick");
+var input4 = document.getElementById("dollars_per_tick");
 input4.addEventListener("keyup", runCalculateButton);
 
 function runCalculateButton(event) {
