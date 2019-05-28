@@ -10,7 +10,7 @@ function doCalculations() {
   b = Math.round(b)
   var e = (a+b)/2;;
   var f = b+(b-a)/2;
-  var g = a-2*(b-a);
+  var g = a-(b-a);
   a /= Math.pow(10,decimalLength);
   b /= Math.pow(10,decimalLength);
   e /= Math.pow(10,decimalLength);
@@ -24,7 +24,7 @@ function doCalculations() {
   document.getElementById("midpoint_price").innerHTML = e;
   document.getElementById("100%_profit_price").innerHTML = b;
   document.getElementById("150%_profit_price").innerHTML = f;
-  document.getElementById("-200%_profit_price").innerHTML = g;
+  document.getElementById("-100%_profit_price").innerHTML = g;
 
   if (document.getElementById('tick_size').value != null &&
     document.getElementById('tick_size').value != "" &&
@@ -36,14 +36,14 @@ function doCalculations() {
     document.getElementById("100%_profit").innerHTML = "$" + profit100.toFixed(2);
     var profit150 = Math.abs((a-f)*d/c);
     document.getElementById("150%_profit").innerHTML = "$" + profit150.toFixed(2);
-    var profit200 = -1*Math.abs((a-g)*d/c);
-    var profit200String = profit200.toFixed(2).toString();
-    document.getElementById("-200%_profit").innerHTML ="$" + profit200String;
+    var profitNeg100 = -1*Math.abs((a-g)*d/c);
+    var profitNeg100String = profitNeg100.toFixed(2).toString();
+    document.getElementById("-100%_profit").innerHTML ="$" + profitNeg100String;
   } else {
     document.getElementById("50%_profit").innerHTML = '';
     document.getElementById("100%_profit").innerHTML = '';
     document.getElementById("150%_profit").innerHTML = '';
-    document.getElementById("-200%_profit").innerHTML = '';
+    document.getElementById("-100%_profit").innerHTML = '';
   }
 }
 
