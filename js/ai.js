@@ -6,6 +6,7 @@ function doCalculations() {
   setVariablePF();
   var a = sanitizeInput(document.getElementById('entry_price').value);
   var b = sanitizeInput(document.getElementById('exit_price').value);
+  if(a === '' && b === '') { return; }
   var decimalLength = getDecimalLength(a,b);
   a *= Math.pow(10,decimalLength);
   a = Math.round(a)
