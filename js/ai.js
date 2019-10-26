@@ -89,7 +89,7 @@ function getDecimalLength(a,b) {
   if (b.split('.')[1]) {
     decimalLength = Math.max(decimalLength,b.split('.')[1].length);
   }
-  var result = decimalLength + 1;
+  var result = decimalLength + 2;
   return result;
 }
 
