@@ -1,6 +1,9 @@
 document.getElementById("calculate_button").addEventListener("click", doCalculations);
 
 function doCalculations() {
+  var variablePF = getVariablePF();
+  console.log(variablePF);
+  setVariablePF();
   var a = sanitizeInput(document.getElementById('entry_price').value);
   var b = sanitizeInput(document.getElementById('exit_price').value);
   var decimalLength = getDecimalLength(a,b);
@@ -8,7 +11,7 @@ function doCalculations() {
   a = Math.round(a)
   b *= Math.pow(10,decimalLength);
   b = Math.round(b)
-  var e = a+(b-a)*0.6;
+  var e = a+(b-a)*variablePF;//*0.6;
   var f = b+(b-a)/2;
   var g = a-(b-a);
   a /= Math.pow(10,decimalLength);
@@ -47,6 +50,35 @@ function doCalculations() {
   }
 }
 
+function sanitizeVariablePF(variablePF) {
+  var result = variablePF.trim();
+  result = result.replace(/[^0-9]+?$/, "");
+
+  if(isNaN(result) === true || result === '') {return 60};
+
+  return result;
+}
+
+function getVariablePF() {
+  var variablePF = document.getElementById("variable_pf").value;
+  variablePF = sanitizeVariablePF(variablePF);
+
+  // covert from percent to decimal number
+  variablePF /= 100;
+
+  return variablePF;
+}
+
+function setVariablePF() {
+  var valueToSet = Math.round(getVariablePF()*100) + "%";
+
+  // set in UI
+  document.getElementById("variable_pf").value = valueToSet;
+
+  // set in browser cache
+  localStorage.setItem("variablePF", valueToSet);
+}
+
 function getDecimalLength(a,b) {
   var a = a.toString(10);
   var b = b.toString(10);
@@ -81,6 +113,14 @@ input3.addEventListener("keyup", runCalculateButton);
 
 var input4 = document.getElementById("dollars_per_tick");
 input4.addEventListener("keyup", runCalculateButton);
+
+var input5 = document.getElementById("variable_pf");
+input5.addEventListener("keyup", runCalculateButton);
+
+// check browser cache for variable profit factor
+if(localStorage.getItem("variablePF") !== null) {
+  input5.value = localStorage.getItem("variablePF");
+}
 
 function runCalculateButton(event) {
   event.preventDefault();
