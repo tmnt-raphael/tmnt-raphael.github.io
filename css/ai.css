@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  /*background: url("img/patagonia.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  display: grid;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url(../img/patagonia.jpg) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body > * {
+  opacity: 0.9;
+}
+
+.box {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  max-width: 50rem;
+  border-radius: 2px;
+}
+
+header {
+  padding: 14.5px;
+  background: #69bf64;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+main {
+  padding: 29px;
+  background: white;
+}
+
+.fixed-action-btn {
+  top: 23px;
+  right: 23px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.no-top-bottom-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#variable_pf {
+  text-align: center;
+  width: 50%;
+}
+
+#profit_60 {
+  color: green;
+}
+
+#profit_100 {
+  color: green;
+}
+
+#profit_150 {
+  color: green;
+}
+
+#profit_-100 {
+  color: red;
+}

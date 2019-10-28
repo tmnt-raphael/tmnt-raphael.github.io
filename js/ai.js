@@ -24,30 +24,30 @@ function doCalculations() {
   var c = sanitizeInput(document.getElementById('tick_size').value);
   var d = sanitizeInput(document.getElementById('dollars_per_tick').value);
 
-  document.getElementById("0%_profit_price").innerHTML = a;
-  document.getElementById("60%_profit_price").innerHTML = e;
-  document.getElementById("100%_profit_price").innerHTML = b;
-  document.getElementById("150%_profit_price").innerHTML = f;
-  document.getElementById("-100%_profit_price").innerHTML = g;
+  document.getElementById("profit_price_0").innerHTML = a;
+  document.getElementById("profit_price_60").innerHTML = e;
+  document.getElementById("profit_price_100").innerHTML = b;
+  document.getElementById("profit_price_150").innerHTML = f;
+  document.getElementById("profit_price_-100").innerHTML = g;
 
   if (document.getElementById('tick_size').value != null &&
     document.getElementById('tick_size').value != "" &&
     document.getElementById('dollars_per_tick').value != null &&
     document.getElementById('dollars_per_tick').value != "") {
     var profit60 = Math.abs(e-a)*d/c;
-    document.getElementById("60%_profit").innerHTML = "$" + profit60.toFixed(2);
+    document.getElementById("profit_60").innerHTML = "$" + profit60.toFixed(2);
     var profit100 = Math.abs((a-b)*d/c);
-    document.getElementById("100%_profit").innerHTML = "$" + profit100.toFixed(2);
+    document.getElementById("profit_100").innerHTML = "$" + profit100.toFixed(2);
     var profit150 = Math.abs((a-f)*d/c);
-    document.getElementById("150%_profit").innerHTML = "$" + profit150.toFixed(2);
+    document.getElementById("profit_150").innerHTML = "$" + profit150.toFixed(2);
     var profitNeg100 = -1*Math.abs((a-g)*d/c);
     var profitNeg100String = profitNeg100.toFixed(2).toString();
-    document.getElementById("-100%_profit").innerHTML ="$" + profitNeg100String;
+    document.getElementById("profit_-100").innerHTML ="$" + profitNeg100String;
   } else {
-    document.getElementById("60%_profit").innerHTML = '';
-    document.getElementById("100%_profit").innerHTML = '';
-    document.getElementById("150%_profit").innerHTML = '';
-    document.getElementById("-100%_profit").innerHTML = '';
+    document.getElementById("profit_60").innerHTML = '';
+    document.getElementById("profit_100").innerHTML = '';
+    document.getElementById("profit_150").innerHTML = '';
+    document.getElementById("profit_-100").innerHTML = '';
   }
 }
 

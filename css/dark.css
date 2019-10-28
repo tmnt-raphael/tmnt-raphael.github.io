@@ -1,0 +1,48 @@
+header {
+  background-color: teal;
+  color: white;
+}
+
+main {
+  background-color: DarkSlateBlue;
+}
+
+main input {
+  color: ghostwhite;
+}
+
+main table {
+  color: ghostwhite;
+}
+
+.btn {
+  background-color: steelblue;
+}
+
+.btn:hover {
+  background-color: steelblue;
+}
+
+.btn-floating {
+  background-color: steelblue;
+}
+
+.btn-floating:hover {
+  background-color: steelblue;
+}
+
+#profit_60 {
+  color: limegreen;
+}
+
+#profit_100 {
+  color: limegreen;
+}
+
+#profit_150 {
+  color: limegreen;
+}
+
+#profit_-100 {
+  color: #ff4d4d;
+}
