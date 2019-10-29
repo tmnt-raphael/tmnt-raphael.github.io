@@ -10,6 +10,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="css/ai.css">
+
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -63,86 +65,30 @@
         </thead>
         <tbody>
           <tr>
-            <td rowspan="4" id="0%_profit_price"></td>
-            <td id="60%_profit_price"></td>
-            <td style="padding-top: 0; padding-bottom: 0"><input id="variable_pf" style="text-align: center; width: 50%" type="text" value="60%"></td>
-            <td id="60%_profit" style="color: green"></td>
+            <td rowspan="4" id="profit_price_0"></td>
+            <td id="profit_price_60"></td>
+            <td class="no-top-bottom-padding"><input id="variable_pf" type="text" value="60%"></td>
+            <td id="profit_60"></td>
           </tr>
           <tr>
-            <td id="100%_profit_price"></td>
+            <td id="profit_price_100"></td>
             <td>100%</td>
-            <td id="100%_profit" style="color: green"></td>
+            <td id="profit_100"></td>
           </tr>
           <tr>
-            <td id="150%_profit_price"></td>
+            <td id="profit_price_150"></td>
             <td>150%</td>
-            <td id="150%_profit" style="color: green"></td>
+            <td id="profit_150"></td>
           </tr>
           <tr>
-            <td id="-100%_profit_price"></td>
+            <td id="profit_price_-100"></td>
             <td>-100%</td>
-            <td id="-100%_profit" style="color: red"></td>
+            <td id="profit_-100"></td>
           </tr>
         </tbody>
       </table>
     </main>
   </div>
-  <div></div>
   <script type="text/javascript" src="js/ai.js"></script>
-  <style type="text/css">
-
-    body {
-      margin: 0;
-      /*background: url("img/patagonia.jpg");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed; */
-      display: grid;
-    }
-
-    body:after {
-      content: "";
-      position: fixed;
-      top: 0;
-      height: 100vh;
-      left: 0;
-      right: 0;
-      z-index: -1;
-      background: url(img/patagonia.jpg) center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-
-    body > * {
-      opacity: 0.9;
-    }
-
-    .box {
-      margin-top: 5vh;
-      margin-bottom: 5vh;
-      max-width: 50rem;
-      border-radius: 2px;
-    }
-
-    header {
-      padding: 14.5px;
-      background: #69bf64;
-      font-size: 1.15rem;
-      text-align: center;
-    }
-
-    main {
-      padding: 29px;
-      background: white;
-    }
-
-    .bold {
-      font-weight: bold;
-    }
-
-  </style>
 </body>
 </html>
