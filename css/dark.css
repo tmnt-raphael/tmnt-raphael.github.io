@@ -6,7 +6,7 @@ body:after {
   left: 0;
   right: 0;
   z-index: -1;
-  background: url(../img/dark.jpeg) center center;
+  background: url(../img/patagonia.jpg) center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -46,8 +46,12 @@ main table {
   background-color: steelblue;
 }
 
-#profit_60 {
+.dark-theme-green {
   color: limegreen;
+}
+
+.dark-theme-red {
+  color: #ff4d4d;
 }
 
 #profit_100 {

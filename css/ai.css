@@ -65,8 +65,12 @@ main {
   width: 50%;
 }
 
-#profit_60 {
+.light-theme-green {
   color: green;
+}
+
+.light-theme-red {
+  color: red;
 }
 
 #profit_100 {

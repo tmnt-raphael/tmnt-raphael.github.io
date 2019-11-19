@@ -7,7 +7,15 @@ function doCalculations() {
   var a = sanitizeInput(document.getElementById('entry_price').value);
   var b = sanitizeInput(document.getElementById('exit_price').value);
   if(a === '' && b === '') { return; }
-  var decimalLength = getDecimalLength(a,b);
+
+  var decimalLength = Math.max(getDecimalLength(a,b), getDecimalLength(variablePF, variablePF));
+
+  var temp = [a, b, variablePF];
+  for (var i = 0; i < temp.length; i++) {
+    Math.max(decimalLength, getDecimalLength(temp[i]));
+  }
+  decimalLength += 2
+
   a *= Math.pow(10,decimalLength);
   a = Math.round(a)
   b *= Math.pow(10,decimalLength);
@@ -34,8 +42,35 @@ function doCalculations() {
     document.getElementById('tick_size').value != "" &&
     document.getElementById('dollars_per_tick').value != null &&
     document.getElementById('dollars_per_tick').value != "") {
-    var profit60 = Math.abs(e-a)*d/c;
+    var profit60 = /*Math.abs(e-a)*/(b-a)*variablePF*d/c;
+
+    var variableProfitTag = document.getElementById("profit_60");
+    if(darkMode === true) {
+      if(profit60 < 0) {
+        variableProfitTag.classList.add("dark-theme-red");
+        variableProfitTag.classList.remove("dark-theme-green");
+      } else if(profit60 > 0) {
+        variableProfitTag.classList.add("dark-theme-green");
+        variableProfitTag.classList.remove("dark-theme-red");
+      } else {
+        variableProfitTag.classList.remove("dark-theme-red");
+        variableProfitTag.classList.remove("dark-theme-green");
+      }
+    } else {
+      if(profit60 < 0) {
+        variableProfitTag.classList.add("light-theme-red");
+        variableProfitTag.classList.remove("light-theme-green");
+      } else if(profit60 > 0) {
+        variableProfitTag.classList.add("light-theme-green");
+        variableProfitTag.classList.remove("light-theme-red");
+      } else {
+        variableProfitTag.classList.remove("light-theme-red");
+        variableProfitTag.classList.remove("light-theme-green");
+      }
+    }
+
     document.getElementById("profit_60").innerHTML = "$" + profit60.toFixed(2);
+
     var profit100 = Math.abs((a-b)*d/c);
     document.getElementById("profit_100").innerHTML = "$" + profit100.toFixed(2);
     var profit150 = Math.abs((a-f)*d/c);
@@ -53,7 +88,7 @@ function doCalculations() {
 
 function sanitizeVariablePF(variablePF) {
   var result = variablePF.trim();
-  result = result.replace(/[^0-9]+?$/, "");
+  result = result.replace(/[^0-9-]+?$/, "");
 
   if(isNaN(result) === true || result === '') {return 60};
 
@@ -71,7 +106,7 @@ function getVariablePF() {
 }
 
 function setVariablePF() {
-  var valueToSet = Math.round(getVariablePF()*100) + "%";
+  var valueToSet = getVariablePF()*100 + "%";
 
   // set in UI
   document.getElementById("variable_pf").value = valueToSet;
@@ -80,18 +115,13 @@ function setVariablePF() {
   localStorage.setItem("variablePF", valueToSet);
 }
 
-function getDecimalLength(a,b) {
+function getDecimalLength(a) {
   var a = a.toString(10);
-  var b = b.toString(10);
   var decimalLength = 0;
   if (a.split('.')[1]) {
-    decimalLength = Math.max(decimalLength,a.split('.')[1].length);
+    decimalLength = Math.max(decimalLength, a.split('.')[1].length);
   }
-  if (b.split('.')[1]) {
-    decimalLength = Math.max(decimalLength,b.split('.')[1].length);
-  }
-  var result = decimalLength + 2;
-  return result;
+  return decimalLength;
 }
 
 function sanitizeInput(input) {
