@@ -2,7 +2,6 @@ document.getElementById("calculate_button").addEventListener("click", doCalculat
 
 function doCalculations() {
   var variablePF = getVariablePF();
-  console.log(variablePF);
   setVariablePF();
   var a = sanitizeInput(document.getElementById('entry_price').value);
   var b = sanitizeInput(document.getElementById('exit_price').value);
@@ -92,6 +91,14 @@ function sanitizeVariablePF(variablePF) {
 
   if(isNaN(result) === true || result === '') {return 60};
 
+  //var decimalLength = getDecimalLength(result);
+  //console.log(result)
+  //result *= 1
+  //console.log(result)
+  //result = result.toFixed(decimalLength);
+  //console.log(decimalLength);
+  //console.log(result);
+
   return result;
 }
 
@@ -99,14 +106,22 @@ function getVariablePF() {
   var variablePF = document.getElementById("variable_pf").value;
   variablePF = sanitizeVariablePF(variablePF);
 
+  var decimalLength = getDecimalLength(variablePF);
+
   // covert from percent to decimal number
   variablePF /= 100;
+
+  decimalLength += 2
+  variablePF = variablePF.toFixed(decimalLength);
 
   return variablePF;
 }
 
 function setVariablePF() {
-  var valueToSet = getVariablePF()*100 + "%";
+  var variablePF = getVariablePF()
+  var decimalLength = getDecimalLength(variablePF);
+  decimalLength -= 2
+  var valueToSet = (variablePF*100).toFixed(decimalLength) + "%";
 
   // set in UI
   document.getElementById("variable_pf").value = valueToSet;
