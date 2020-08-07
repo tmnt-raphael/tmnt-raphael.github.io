@@ -91,14 +91,6 @@ function sanitizeVariablePF(variablePF) {
 
   if(isNaN(result) === true || result === '') {return 60};
 
-  //var decimalLength = getDecimalLength(result);
-  //console.log(result)
-  //result *= 1
-  //console.log(result)
-  //result = result.toFixed(decimalLength);
-  //console.log(decimalLength);
-  //console.log(result);
-
   return result;
 }
 
