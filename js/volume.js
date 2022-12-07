@@ -21,18 +21,53 @@ var VolumeSlider = function () {
 
     this.input.value = this._volume;
 
-    this.icon.addEventListener('mousedown', function () {
+    // handles mouse clicks
+    this.icon.addEventListener('mousedown', function (eventData) {
+      if(eventData.button === 0) {
+        _this.charge();
+
+        _this.icon.addEventListener('mouseup', function (eventData) {
+          if(eventData.button === 0 && _this._charging === true) {
+            _this.release(_this._charge);
+          }
+        }, { once: true });
+
+        _this.icon.addEventListener('mouseout', function (eventData) {
+          if(eventData.button === 0 && _this._charging === true) {
+            _this.release(_this._charge);
+          }
+        }, { once: true });
+      }
+    });
+
+    // handles touch events
+    this.icon.addEventListener('touchstart', function (eventData) {
       _this.charge();
+
+      _this.icon.addEventListener('touchend', function (eventData) {
+        if(_this._charging === true) {
+          _this.release(_this._charge);
+        }
+      }, { once: true });
+
+      _this.icon.addEventListener('touchmove', function (eventData) {
+        if(_this._charging === true) {
+          _this.release(_this._charge);
+        }
+      }, { once: true });
+
+      _this.icon.addEventListener('touchcancel', function (eventData) {
+        if(_this._charging === true) {
+          _this.release(_this._charge);
+        }
+      }, { once: true });
     });
-    this.icon.addEventListener('mouseup', function () {
-      _this.release(_this._charge);
-    });
-    this.icon.addEventListener('touchstart', function () {
-      _this.charge();
-    });
-    this.icon.addEventListener('touchend', function () {
-      _this.release(_this._charge);
-    });
+    // this.icon.addEventListener('touchstart', function () {
+    //   _this.charge();
+    // });
+    // this.icon.addEventListener('touchend', function () {
+    //   _this.release(_this._charge);
+    // });
   }
 
   /**
