@@ -91,6 +91,10 @@ header .intro-text .skills {
   font-size: 1.25em;
   font-weight: 300;
 }
+header .intro-text .typed-cursor {
+  font-size: 1.25em;
+  font-weight: 300;
+}
 @media (min-width: 768px) {
   header .container {
     padding-top: 200px;
@@ -100,6 +104,9 @@ header .intro-text .skills {
     font-size: 4.75em;
   }
   header .intro-text .skills {
+    font-size: 1.75em;
+  }
+  header .intro-text .typed-cursor {
     font-size: 1.75em;
   }
 }
