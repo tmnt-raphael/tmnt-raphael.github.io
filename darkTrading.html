@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ39RT5V17"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-SJ39RT5V17');
-  </script>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ken Corporation</title>
@@ -21,6 +11,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="css/ai.css">
+  <link rel="stylesheet" type="text/css" href="css/dark.css">
 
   <!-- favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -39,21 +30,21 @@
         <form>
           <div class="row">
             <div class="input-field col s6">
-              <input id="entry_price" type="text" class="validate">
+              <input id="entry_price" type="text">
               <label for="entry_price">Entry Price *</label>
             </div>
             <div class="input-field col s6">
-              <input id="exit_price" type="text" class="validate">
+              <input id="exit_price" type="text">
               <label for="exit_price">Exit Price *</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="e.g. 0.025" id="tick_size" type="text" class="validate">
+              <input placeholder="e.g. 0.025" id="tick_size" type="text">
               <label for="tick_size">Tick Size</label>
             </div>
             <div class="input-field col s6">
-              <input placeholder="e.g. 12.50" id="dollars_per_tick" type="text" class="validate">
+              <input placeholder="e.g. 12.50" id="dollars_per_tick" type="text">
               <label for="dollars_per_tick">Dollars Per Tick</label>
             </div>
           </div>
@@ -99,13 +90,13 @@
       </table>
     </main>
     <div class="fixed-action-btn">
-      <a class="btn-floating btn-large blue" href="darkTrading.html">
-        <i class="large material-icons">brightness_3</i>
+      <a class="btn-floating btn-large" href="javascript:history.back()">
+        <i class="large material-icons">brightness_5</i>
       </a>
     </div>
   </div>
   <script type="text/javascript">
-    var darkMode = false;
+    var darkMode = true;
   </script>
   <script type="text/javascript" src="js/ai.js"></script>
 </body>
