@@ -258,8 +258,8 @@
         <div class="footer-below">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Ken Luy 2023
+                    <div id="yearDiv" class="col-lg-12">
+                        Copyright &copy; Ken Luy 
                     </div>
                 </div>
             </div>
@@ -431,6 +431,17 @@
     </script>
     <script async src='https://www.google-analytics.com/analytics.js'></script>
     <!-- End Google Analytics -->
+
+    <!-- General JavaScript Code -->
+    <script>
+        (function() {
+            var currentYear = new Date().getFullYear();
+            var yearDiv = document.getElementById('yearDiv');
+            if (yearDiv) {
+                yearDiv.textContent += currentYear;
+            }
+        })();
+    </script>
 
 </body>
 
